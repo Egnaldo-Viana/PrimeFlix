@@ -1,0 +1,45 @@
+import React from 'react';
+import api from '../../services/api';
+import { Link } from 'react-router-dom';
+import './home.css';
+
+//URL da api: /movie/now_playing?api_key=5bc4565984f5d84e202811fea28f3b64&language=pt-BR
+
+const Home = () => {
+  const [filmes, setFilmes] = React.useState([]);
+
+  React.useEffect(() => {
+    async function loandFilme() {
+      const response = await api.get('movie/now_playing', {
+        params: {
+          api_key: '5bc4565984f5d84e202811fea28f3b64',
+          language: 'pt-BR',
+          page: 1,
+        },
+      });
+      setFilmes(response.data.results.slice(0, 10));
+    }
+    loandFilme();
+  }, []);
+
+  return (
+    <div className="container">
+      <div className="lista-filmes">
+        {filmes.map((filme) => {
+          return (
+            <article key={filme.id}>
+              <strong>{filme.title}</strong>
+              <img
+                src={`https://image.tmdb.org/t/p/original/${filme.poster_path}`}
+                alt={filme.title}
+              />
+              <Link to={`/filme/${filme.id}`}>Acessar</Link>
+            </article>
+          );
+        })}
+      </div>
+    </div>
+  );
+};
+
+export default Home;
