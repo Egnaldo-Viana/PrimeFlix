@@ -1,12 +1,27 @@
-# React + Vite
+# PrimeFlix 🎬  
+Projeto desenvolvido durante o curso de **React do Sujeito Programador**, com o objetivo de criar uma aplicação que consome a API do TMDb para listar filmes em cartaz, exibir detalhes e permitir salvar favoritos no navegador com **LocalStorage**.  
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+## 🚀 Tecnologias utilizadas
+- React  
+- React Router DOM  
+- Axios  
+- LocalStorage  
+- Vite (para o ambiente de desenvolvimento)  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🔧 Funcionalidades
+- Listagem dos 10 filmes em cartaz.  
+- Detalhes de cada filme com título e poster.  
+- Lista de favoritos salva no LocalStorage.  
+- Remoção de filmes dos favoritos.  
+- Página de erro (404) para rotas inexistentes.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Como visualizar
+Acesse o projeto pelo link:  
+**[PrimeFlix Online](https://primeflix-olive.vercel.app/)**  
+
