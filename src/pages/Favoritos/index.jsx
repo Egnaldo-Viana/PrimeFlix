@@ -1,6 +1,7 @@
 import React from 'react';
 import './favoritos.css';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Favoritos = () => {
   const [filmes, setFilmes] = React.useState([]);
@@ -19,10 +20,13 @@ const Favoritos = () => {
     let filtroFilmes = filmes.filter((item) => {
       return item.id !== id;
     });
+
+    // Atualiza o estado 'filmes' com o novo array filtrado
     setFilmes(filtroFilmes);
 
     // Atualiza o localStorage com a nova lista de filmes sem o filme excluído
     localStorage.setItem('@primeflix', JSON.stringify(filtroFilmes));
+    toast.success('Filme removido com sucesso');
   }
 
   return (
